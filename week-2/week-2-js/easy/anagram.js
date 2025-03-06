@@ -5,8 +5,8 @@
 */
 
 function isAnagram(str1, str2) {
-    const sorted1Str = str1.split("").sort().join()
-    const sorted2str = str2.split("").sort().join()
+    const sorted1Str = str1.toLowerCase().split("").sort().join()
+    const sorted2str = str2.toLowerCase().split("").sort().join()
 
     return sorted1Str===sorted2str
 }
