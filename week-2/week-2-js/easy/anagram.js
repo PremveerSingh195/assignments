@@ -5,7 +5,12 @@
 */
 
 function isAnagram(str1, str2) {
+    const sorted1Str = str1.split("").sort().join()
+    const sorted2str = str2.split("").sort().join()
 
+    return sorted1Str===sorted2str
 }
+
+console.log(isAnagram("gagan" , "ggaan"));
 
 module.exports = isAnagram;
