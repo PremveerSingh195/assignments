@@ -8,7 +8,7 @@
     - clear: makes the `result` variable to 0
     - getResult: returns the value of `result` variable
     - calculate: takes a string expression which can take multi-arithmetic operations and give its result
-      example input: `10 +   2 *    (   6 - (4 + 1) / 2) + 7`
+      example input: `10 +    2 *    (   6 - (4 + 1) / 2) + 7`
       Points to Note: 
         1. the input can have multiple continuous spaces, you're supposed to avoid them and parse the expression correctly
         2. the input can have invalid non-numerical characters like `5 + abc`, you're supposed to throw error for such inputs
@@ -16,6 +16,52 @@
   Once you've implemented the logic, test your code by running
 */
 
-class Calculator {}
+class Calculator {
+  constructor() {
+    this.result = 0;
+  }
+  add(a) {
+    this.result += a;
+  }
+  subtract(a) {
+    this.result -= a;
+  }
+  multiply(a) {
+    this.result *= a;
+  }
+  divide(a) {
+    if (a === 0) {
+      throw new Error("Invalid expression: Division by zero");
+    }
+    this.result /= a;
+  }
+  clear() {
+    this.result = 0;
+  }
+  getResult() {
+    return this.result;
+  }
+  calculate(expression) {
+    const temp = expression;
+    const cleanedExpression = temp.replace(/\s+/g, "");
+    const validExpression = /^[0-9+\-*/().\s]+$/.test(cleanedExpression);
+
+    if (!validExpression) {
+      throw new Error("expression is not valid");
+    }
+
+    try {
+      this.result = eval(expression);
+    } catch (error) {
+      throw new error("expression is not valid");
+    }
+
+    if (this.result === Infinity) {
+      throw new Error("cannot devide an number by 0");
+    }
+
+    return this.result;
+  }
+}
 
 module.exports = Calculator;
