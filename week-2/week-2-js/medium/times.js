@@ -8,6 +8,21 @@ Hint - use Date class exposed in JS
 There is no automated test for this one, this is more for you to understand time goes up as computation goes up
 */
 
+
+
 function calculateTime(n) {
-    return 0.01;
+  const startTime = performance.now();
+  let sum = 0;
+
+  for (let i = 1; i <= n; i++) {
+    sum += i;
+  }
+
+  const endtime = performance.now();
+
+  return (endtime - startTime) / 1000;
 }
+
+console.log("calculate the sum time 1 to 100 :- ", calculateTime(100));
+console.log("calculate the sum time 1 to 1000 :- ", calculateTime(100000));
+console.log("calculate the sum time 1 to 10000 :- ", calculateTime(1000000000));

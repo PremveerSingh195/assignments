@@ -5,20 +5,81 @@
  * Compare it with the results from 3-promise-all.js
  */
 
-function wait1(t) {
+// function wait1(t) {
+//   return new Promise((resolve) => {
+//     setTimeout(() => {
+//       resolve();
+//     }, t * 1000);
+//   });
+// }
 
+// function wait2(t) {
+//   return new Promise((resolve) => {
+//     setTimeout(() => {
+//       resolve();
+//     }, t * 1000);
+//   });
+// }
+
+// function wait3(t) {
+//   return new Promise((resolve) => {
+//     setTimeout(() => {
+//       resolve();
+//     }, t * 1000);
+//   });
+// }
+
+// function calculateTime(t1, t2, t3) {
+//   let startime = new Date();
+
+//   return call(t1, t2, t3).then(function () {
+//     let end = new Date();
+//     return end.getTime() - startime.getTime();
+//   });
+// }
+
+// function call(t1, t2, t3) {
+//   return wait1(t1)
+//     .then(function (t2) {
+//       return wait2(t2);
+//     })
+//     .then(function (t3) {
+//       return wait3(t3);
+//     });
+// }
+
+
+function wait1(time) {
+  return new Promise((resolve) => setTimeout(resolve, time * 1000));
 }
 
-function wait2(t) {
-
+// Placeholder wait function
+function wait2(time) {
+  return new Promise((resolve) => setTimeout(resolve, time * 1000));
 }
 
-function wait3(t) {
-
+// Placeholder wait function
+function wait3(time) {
+  return new Promise((resolve) => setTimeout(resolve, time * 1000));
 }
 
 function calculateTime(t1, t2, t3) {
+  let start = new Date();
 
+  return call(t1, t2, t3).then(function () {
+    let end = new Date();
+    return end.getTime() - start.getTime();
+  });
+}
+
+function call(t1, t2, t3) {
+  return wait1(t1)
+    .then(function (t2) {
+      return wait2(t2);
+    })
+    .then(function (t3) {
+      return wait3(t3);
+    });
 }
 
 module.exports = calculateTime;

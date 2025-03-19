@@ -21,7 +21,7 @@ class Todo {
   
     getAll() {
       return this.todos;
-    }
+    } 
   
     get(indexOfTodo) {
       if (indexOfTodo >= 0 && indexOfTodo < this.todos.length) {

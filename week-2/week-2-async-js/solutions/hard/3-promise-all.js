@@ -26,4 +26,3 @@ function wait1(t) {
   }
   
   module.exports = calculateTime;
-  

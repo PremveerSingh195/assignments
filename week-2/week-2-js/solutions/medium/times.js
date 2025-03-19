@@ -12,4 +12,4 @@ function calculateTime(n) {
 
 console.log('Time for sum from 1 to 100:', calculateTime(100));
 console.log('Time for sum from 1 to 100000:', calculateTime(100000));
-console.log('Time for sum from 1 to 1000000000:', calculateTime(1000000000));
+console.log("Time for sum from 1 to 1000000000:", calculateTime(1000000000));

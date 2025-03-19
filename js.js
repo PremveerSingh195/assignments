@@ -1,1 +1,5 @@
-console.log(10 + 2 * (6 - (4 + 1) / 2) + 7);
+let arr = ["mango", "orange", "banana", "grapes"];
+
+let modifiedarr = arr.splice(2, 1, "papaya");
+
+console.log(arr);
