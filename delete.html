@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<h1>TODO list</h1>
+<div>
+    <div id="todo-1">
+        <h4>1. Take class</h4>
+        <button onclick="deleteTodo()">delete</button>
+    </div>
+</div>
+
+<body>
+    <script>
+        function deleteTodo(num) {
+            const element = document.getElementById("todo-" + num)
+            element.parentNode.removeChild(element)
+        }
+    </script>
+</body>
+
+</html>
