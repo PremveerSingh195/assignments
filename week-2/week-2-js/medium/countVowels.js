@@ -6,7 +6,42 @@
 */
 
 function countVowels(str) {
-    // Your code here
+  let vowelCount = 0;
+  const vowels = str.toLowerCase().split("");
+
+  for (let i = 0; i < vowels.length; i++) {
+    if (
+      vowels[i] === "a" ||
+      vowels[i] === "e" ||
+      vowels[i] === "i" ||
+      vowels[i] === "o" ||
+      vowels[i] === "u"
+    ) {
+      vowelCount++;
+      console.log(1);
+    }
+  }
+
+  return vowelCount;
 }
+
+console.log(countVowels("Hello, world!"));
+
+// function countVowels(str) {
+//   let vowelCount = 0;
+//   const vowelWord = ["a", "e", "i", "o", "u"];
+//   const vowels = str.toLowerCase().split("");
+
+//   for (let i = 0; i < vowels.length; i++) {
+//     if (vowelWord.includes(vowels[i])) {
+//       vowelCount++;
+//     }
+//   }
+
+//   return vowelCount;
+// }
+
+// console.log(countVowels("Hello, world!"));
+
 
 module.exports = countVowels;

@@ -4,7 +4,21 @@
 */
 
 function isPalindrome(str) {
-  return true;
+  const text = str.toLowerCase().split("");
+
+  let a = [];
+
+  for (let i = str.length; i >= 0; i--) {
+    a.push(text[i]);
+  }
+  console.log(a.join(""));
+  return (
+    a.join("").replace(/[^a-zA-Z]/g, "") ==
+    str.toLowerCase().replace(/[^a-zA-Z]/g, "")
+  );
 }
+
+console.log(isPalindrome("NAN"));
+
 
 module.exports = isPalindrome;
